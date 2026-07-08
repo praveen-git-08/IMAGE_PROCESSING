@@ -37,3 +37,17 @@ os.makedirs('../results', exist_ok=True)
 cv2.imwrite('../results/equalized.png', equalized)
 cv2.imwrite('../results/clahe.png', clahe_img)
 print("Results saved in results folder.")
+
+# Load image
+img = cv2.imread('../data/sample.png', cv2.IMREAD_GRAYSCALE)
+
+# Apply Histogram Equalization
+equalized = cv2.equalizeHist(img)
+
+# Ensure results folder exists
+os.makedirs('../results', exist_ok=True)
+
+# Save result
+cv2.imwrite('../results/equalized.png', equalized)
+
+print("Enhanced image saved in results/equalized.png")
